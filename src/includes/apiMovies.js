@@ -1,6 +1,7 @@
 import axios from 'axios'
+require('dotenv').config()
 
-const apiKey = '9efe0b4c-51dc-4f25-a5e8-111b841944d1'
+const apiKey = process.env.VUE_APP_KINOPOISK_KEY
 const apiUrl = 'https://kinopoiskapiunofficial.tech/api/v2.2/films'
 
 async function getMovies(title) {

@@ -4,6 +4,7 @@ const authRoutes = require('./routes/auth')
 const movieRoutes = require('./routes/movies')
 const usersRoutes = require('./routes/users')
 const cors = require('cors')
+require('dotenv').config()
 
 const app = express()
 
@@ -13,8 +14,8 @@ app.use(
   })
 )
 
-const atlasUser = 'pavelmuz'
-const atlasPassword = 'jctDjuHkQ6AT1K8F'
+const atlasUser = process.env.VUE_APP_ATLAS_USER
+const atlasPassword = process.env.VUE_APP_ATLAS_PASSWORD
 
 mongoose
   .connect(`mongodb+srv://${atlasUser}:${atlasPassword}@cluster0.psapdlz.mongodb.net/movies-db`, {
